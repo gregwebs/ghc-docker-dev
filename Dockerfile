@@ -27,8 +27,8 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F6F88286 \
 RUN apt-get update && apt-get install -y \
  # from darinmorrison/haskell, related to ncurses, not sure if it is needed
  libtinfo5 \
- # from GHC wiki
- git autoconf automake libtool make libgmp-dev ncurses-dev g++ llvm python \
+ # mentioned on the GHC wiki
+ git autoconf automake libtool make libgmp-dev ncurses-dev g++ llvm python bzip2 \
  ## install minimal set of haskell packages
  # from darinmorrison/haskell
  ghc-7.8.3 \
