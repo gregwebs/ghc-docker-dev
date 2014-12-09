@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
  # from darinmorrison/haskell, related to ncurses, not sure if it is needed
  libtinfo5 \
  # mentioned on the GHC wiki
- git autoconf automake libtool make libgmp-dev ncurses-dev g++ llvm python bzip2 \
+ autoconf automake libtool make libgmp-dev ncurses-dev g++ llvm python bzip2 ca-certificates \
  ## install minimal set of haskell packages
  # from darinmorrison/haskell
  ghc-7.8.3 \
@@ -37,11 +37,13 @@ RUN apt-get update && apt-get install -y \
  happy \
  # development conveniences
  sudo xutils-dev \
- # for the arc tool
- php5-cli php5-curl \
  && apt-get clean
 
 # arc tool
+# It makes a lot more sense to run this from your host
+RUN apt-get update && apt-get install -y \
+ git php5-cli php5-curl libssl-dev vim-tiny \
+ && apt-get clean
 RUN mkdir /php && cd /php \
  && git clone https://github.com/phacility/libphutil.git \
  && git clone https://github.com/phacility/arcanist.git
