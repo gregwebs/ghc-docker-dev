@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
  # from darinmorrison/haskell, related to ncurses, not sure if it is needed
  libtinfo5 \
  # mentioned on the GHC wiki
- autoconf automake libtool make libgmp-dev ncurses-dev g++ llvm python bzip2 ca-certificates \
+ autoconf automake libtool make libgmp-dev ncurses-dev g++ llvm llvm-3.6 python bzip2 ca-certificates \
  ## install minimal set of haskell packages
  # from darinmorrison/haskell
  ghc-7.8.3 \
