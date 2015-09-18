@@ -37,6 +37,8 @@ RUN apt-get update && apt-get install -y \
  happy \
  # development conveniences
  sudo xutils-dev \
+ # For document generation
+ xsltproc docbook-xsl \
  && apt-get clean
 
 # arc tool
