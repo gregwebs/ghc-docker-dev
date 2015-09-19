@@ -9,7 +9,7 @@
 # This places a .arcrc file (which is ignored) in your repo
 # arc is a tool to interface with phabricator, the main ghc development tool.
 # When you have a patch ready, run:
-# 
+#
 #    arc diff
 #
 # Look here on how to kick off your first build:
@@ -21,34 +21,38 @@ MAINTAINER Greg Weber
 ## add ppa for ubuntu trusty haskell packages
 # from darinmorrison/haskell
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F6F88286 \
- && echo 'deb     http://ppa.launchpad.net/hvr/ghc/ubuntu trusty main' >> /etc/apt/sources.list.d/haskell.list \
- && echo 'deb-src http://ppa.launchpad.net/hvr/ghc/ubuntu trusty main' >> /etc/apt/sources.list.d/haskell.list
+  && echo 'deb     http://ppa.launchpad.net/hvr/ghc/ubuntu trusty main' >> /etc/apt/sources.list.d/haskell.list \
+  && echo 'deb-src http://ppa.launchpad.net/hvr/ghc/ubuntu trusty main' >> /etc/apt/sources.list.d/haskell.list
 
 RUN apt-get update && apt-get install -y \
- # from darinmorrison/haskell, related to ncurses, not sure if it is needed
- libtinfo5 \
- # mentioned on the GHC wiki
- autoconf automake libtool make libgmp-dev ncurses-dev g++ llvm llvm-3.6 python bzip2 ca-certificates \
- ## install minimal set of haskell packages
- # from darinmorrison/haskell
- ghc-7.8.3 \
- alex \
- cabal-install-1.20 \
- happy \
- # development conveniences
- sudo xutils-dev \
- # For document generation
- xsltproc docbook-xsl \
- && apt-get clean
 
-# arc tool
-# It makes a lot more sense to run this from your host
-RUN apt-get update && apt-get install -y \
- git php5-cli php5-curl libssl-dev vim-tiny \
- && apt-get clean
+  # from darinmorrison/haskell, related to ncurses, not sure if it is needed
+  libtinfo5 \
+
+  # mentioned on the GHC wiki
+  autoconf automake libtool make libgmp-dev ncurses-dev g++ llvm llvm-3.6 python bzip2 ca-certificates \
+
+  ## install minimal set of haskell packages
+  # from darinmorrison/haskell
+  ghc-7.8.3 \
+  alex \
+  cabal-install-1.20 \
+  happy \
+
+  # development conveniences
+  sudo xutils-dev \
+
+  # For document generation
+  xsltproc docbook-xsl \
+
+  # arc tool
+  # It makes a lot more sense to run this from your host
+  git php5-cli php5-curl libssl-dev vim-tiny \
+  && apt-get clean
+
 RUN mkdir /php && cd /php \
- && git clone https://github.com/phacility/libphutil.git \
- && git clone https://github.com/phacility/arcanist.git
+  && git clone https://github.com/phacility/libphutil.git \
+  && git clone https://github.com/phacility/arcanist.git
 
 # for building the ghc manual
 #RUN apt-get update \
