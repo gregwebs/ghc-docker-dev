@@ -44,6 +44,7 @@ RUN apt-get update && apt-get install -y \
 
   # For document generation
   xsltproc docbook-xsl \
+  python-sphinx \
 
   # arc tool
   # It makes a lot more sense to run this from your host
