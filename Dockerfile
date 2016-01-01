@@ -35,9 +35,9 @@ RUN apt-get update && apt-get install -y \
 
   ## install minimal set of haskell packages
   # from darinmorrison/haskell
-  ghc-7.8.3 \
+  ghc-7.10.3 \
   alex \
-  cabal-install-1.20 \
+  cabal-install-1.22 \
   happy \
 
   # development conveniences
@@ -71,4 +71,4 @@ ENV HOME /home/ghc
 WORKDIR /home/ghc
 USER ghc
 
-ENV PATH /opt/ghc/7.8.3/bin:/php/arcanist/bin:$PATH 
+ENV PATH /opt/ghc/7.10.3/bin:/php/arcanist/bin:$PATH 
