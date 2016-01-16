@@ -32,6 +32,7 @@ RUN apt-get update && apt-get install -y \
   # mentioned on the GHC wiki
   autoconf automake libtool make libgmp-dev ncurses-dev g++ llvm llvm-3.6 python bzip2 ca-certificates \
   llvm-3.7 \
+  xz-utils \
 
   ## install minimal set of haskell packages
   # from darinmorrison/haskell
