@@ -17,4 +17,4 @@ When you have a patch ready, run:
     arc diff
 
 Look here on how to kick off your first build:
-https://ghc.haskell.org/trac/ghc/wiki/Building/Hacking
+https://ghc.haskell.org/trac/ghc/wiki/Newcomers
