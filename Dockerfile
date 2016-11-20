@@ -35,8 +35,9 @@ RUN apt-get update && apt-get install -y \
   libtinfo5 \
 
   # mentioned on the GHC wiki
-  autoconf automake libtool make libgmp-dev ncurses-dev g++ llvm llvm-3.6 python bzip2 ca-certificates \
-  llvm-3.5 llvm-3.6 \
+  autoconf automake libtool make libgmp-dev ncurses-dev g++ python bzip2 ca-certificates \
+  llvm \
+  llvm-3.5  \
   llvm-3.7 llvm-3.8 llvm-3.9 \
   xz-utils \
 
@@ -44,7 +45,7 @@ RUN apt-get update && apt-get install -y \
   # from darinmorrison/haskell
   ghc-8.0.1 \
   alex \
-  cabal-install-1.24.0.1 \
+  cabal-install-1.24 \
   happy \
 
   # development conveniences
@@ -56,7 +57,7 @@ RUN apt-get update && apt-get install -y \
 
   # arc tool
   # It makes a lot more sense to run this from your host
-  git php5-cli php5-curl libssl-dev vim-tiny \
+  git php-cli php-curl libssl-dev vim-tiny \
   && apt-get clean
 
 RUN mkdir /php && cd /php \
