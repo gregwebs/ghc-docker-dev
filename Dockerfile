@@ -18,6 +18,11 @@
 FROM debian:testing
 MAINTAINER Greg Weber
 
+RUN apt-get update && apt-get install -y \
+  # Needed for adding the PPA key
+  gnupg \
+  gpgv 
+
 ## add ppa for ubuntu trusty haskell packages
 # from darinmorrison/haskell
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F6F88286 \
