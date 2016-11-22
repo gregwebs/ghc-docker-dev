@@ -79,4 +79,4 @@ ENV HOME /home/ghc
 WORKDIR /home/ghc
 USER ghc
 
-ENV PATH /opt/ghc/7.10.3/bin:/php/arcanist/bin:$PATH 
+ENV PATH /opt/ghc/8.0.1/bin:/php/arcanist/bin:$PATH 
