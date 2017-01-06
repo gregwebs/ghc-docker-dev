@@ -37,7 +37,6 @@ RUN apt-get update && apt-get install -y \
   # mentioned on the GHC wiki
   autoconf automake libtool make libgmp-dev ncurses-dev g++ python bzip2 ca-certificates \
   llvm \
-  llvm-3.5  \
   llvm-3.7 llvm-3.8 llvm-3.9 \
   xz-utils \
 
