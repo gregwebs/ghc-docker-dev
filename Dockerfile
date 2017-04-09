@@ -56,6 +56,9 @@ RUN apt-get update && apt-get install -y \
   
   # Needed for testing current HEAD
   python3 \
+  
+  # Needed for running nofib
+  time \
 
   # arc tool
   # It makes a lot more sense to run this from your host
@@ -81,4 +84,8 @@ ENV HOME /home/ghc
 WORKDIR /home/ghc
 USER ghc
 
-ENV PATH /opt/ghc/8.0.1/bin:/php/arcanist/bin:$PATH 
+ENV PATH /opt/ghc/8.0.1/bin:/opt/cabal/1.24/bin:/php/arcanist/bin:$PATH 
+
+# Build dependencies for nofib-analyse
+RUN cabal update && cabal install html regex-compat 
+
