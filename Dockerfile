@@ -26,8 +26,8 @@ RUN apt-get update && apt-get install -y \
 ## add ppa for ubuntu trusty haskell packages
 # from darinmorrison/haskell
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F6F88286 \
-  && echo 'deb     http://ppa.launchpad.net/hvr/ghc/ubuntu yakkety main' >> /etc/apt/sources.list.d/haskell.list \
-  && echo 'deb-src http://ppa.launchpad.net/hvr/ghc/ubuntu yakkety main' >> /etc/apt/sources.list.d/haskell.list
+  && echo 'deb     http://ppa.launchpad.net/hvr/ghc/ubuntu zesty main' >> /etc/apt/sources.list.d/haskell.list \
+  && echo 'deb-src http://ppa.launchpad.net/hvr/ghc/ubuntu zesty main' >> /etc/apt/sources.list.d/haskell.list
 
 RUN apt-get update && apt-get install -y \
 
@@ -42,7 +42,7 @@ RUN apt-get update && apt-get install -y \
 
   ## install minimal set of haskell packages
   # from darinmorrison/haskell
-  ghc-8.0.1 \
+  ghc-8.2.1 \
   alex \
   cabal-install-1.24 \
   happy \
@@ -84,7 +84,7 @@ ENV HOME /home/ghc
 WORKDIR /home/ghc
 USER ghc
 
-ENV PATH /opt/ghc/8.0.1/bin:/opt/cabal/1.24/bin:/php/arcanist/bin:$PATH 
+ENV PATH /opt/ghc/8.2.1/bin:/opt/cabal/1.24/bin:/php/arcanist/bin:$PATH 
 
 # Build dependencies for nofib-analyse
 RUN cabal update && cabal install html regex-compat 
