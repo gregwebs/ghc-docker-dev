@@ -84,7 +84,7 @@ ENV HOME /home/ghc
 WORKDIR /home/ghc
 USER ghc
 
-ENV PATH /opt/ghc/8.2.1/bin:/opt/cabal/1.24/bin:/php/arcanist/bin:$PATH 
+ENV PATH /opt/ghc/8.2.1/bin:/opt/cabal/2.0/bin:/php/arcanist/bin:$PATH 
 
 # Build dependencies for nofib-analyse
 RUN cabal update && cabal install html regex-compat 
