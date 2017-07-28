@@ -37,14 +37,14 @@ RUN apt-get update && apt-get install -y \
   # mentioned on the GHC wiki
   autoconf automake libtool make libgmp-dev ncurses-dev g++ python bzip2 ca-certificates \
   llvm \
-  llvm-3.7 llvm-3.8 llvm-3.9 \
+  llvm-3.8 llvm-3.9 llvm-4.0 \
   xz-utils \
 
   ## install minimal set of haskell packages
   # from darinmorrison/haskell
   ghc-8.2.1 \
   alex \
-  cabal-install-1.24 \
+  cabal-install-2.0 \
   happy \
 
   # development conveniences
