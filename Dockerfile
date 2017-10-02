@@ -53,6 +53,7 @@ RUN apt-get update && apt-get install -y \
   # For document generation
   xsltproc docbook-xsl \
   python-sphinx \
+  texinfo \
   
   # Needed for testing current HEAD
   python3 \
