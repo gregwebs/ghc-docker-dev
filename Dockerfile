@@ -42,7 +42,7 @@ RUN apt-get update && apt-get install -y \
 
   ## install minimal set of haskell packages
   # from darinmorrison/haskell
-  ghc-8.2.1 \
+  ghc-8.2.2 \
   alex \
   cabal-install-2.0 \
   happy \
@@ -85,7 +85,7 @@ ENV HOME /home/ghc
 WORKDIR /home/ghc
 USER ghc
 
-ENV PATH /opt/ghc/8.2.1/bin:/opt/cabal/2.0/bin:/php/arcanist/bin:$PATH 
+ENV PATH /opt/ghc/8.2.2/bin:/opt/cabal/2.0/bin:/php/arcanist/bin:$PATH 
 
 # Build dependencies for nofib-analyse
 RUN cabal update && cabal install html regex-compat 
