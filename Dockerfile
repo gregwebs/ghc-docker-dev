@@ -21,13 +21,13 @@ MAINTAINER Greg Weber
 RUN apt-get update && apt-get install -y \
   # Needed for adding the PPA key
   gnupg \
-  gpgv 
+  gpgv
 
 ## add ppa for ubuntu trusty haskell packages
 # from darinmorrison/haskell
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F6F88286 \
-  && echo 'deb     http://ppa.launchpad.net/hvr/ghc/ubuntu zesty main' >> /etc/apt/sources.list.d/haskell.list \
-  && echo 'deb-src http://ppa.launchpad.net/hvr/ghc/ubuntu zesty main' >> /etc/apt/sources.list.d/haskell.list
+# from http://downloads.haskell.org/debian/
+RUN  apt-key adv --keyserver hkp://keyserver.ubuntu.com:80  --recv-keys BA3CBA3FFE22B574 \
+  && echo 'deb     http://downloads.haskell.org/debian stretch main' >> /etc/apt/sources.list.d/haskell.list
 
 RUN apt-get update && apt-get install -y \
 
@@ -37,14 +37,14 @@ RUN apt-get update && apt-get install -y \
   # mentioned on the GHC wiki
   autoconf automake libtool make libgmp-dev ncurses-dev g++ python bzip2 ca-certificates \
   llvm \
-  llvm-3.8 llvm-3.9 llvm-4.0 \
+  llvm-3.9 llvm-4.0 \
   xz-utils \
 
   ## install minimal set of haskell packages
   # from darinmorrison/haskell
   ghc-8.2.2 \
   alex \
-  cabal-install-2.0 \
+  cabal-install-2.2 \
   happy \
 
   # development conveniences
@@ -54,10 +54,10 @@ RUN apt-get update && apt-get install -y \
   xsltproc docbook-xsl \
   python-sphinx \
   texinfo \
-  
+
   # Needed for testing current HEAD
   python3 \
-  
+
   # Needed for running nofib
   time \
 
@@ -85,8 +85,8 @@ ENV HOME /home/ghc
 WORKDIR /home/ghc
 USER ghc
 
-ENV PATH /opt/ghc/8.2.2/bin:/opt/cabal/2.0/bin:/php/arcanist/bin:$PATH 
+ENV PATH /opt/ghc/8.2.2/bin:/opt/cabal/2.2/bin:/php/arcanist/bin:$PATH
 
 # Build dependencies for nofib-analyse
-RUN cabal update && cabal install html regex-compat 
+RUN cabal update && cabal install html regex-compat
 
