@@ -38,14 +38,14 @@ RUN apt-get update && apt-get install -y \
   autoconf automake libtool make libgmp-dev ncurses-dev g++ python bzip2 ca-certificates \
   llvm \
   llvm-6.0 \
-  
+
   xz-utils \
 
   ## install minimal set of haskell packages
   # from darinmorrison/haskell
-  ghc-8.2.2 \
+  ghc-8.4.4 \
   alex \
-  cabal-install-2.2 \
+  cabal-install-2.4 \
   happy \
 
   # development conveniences
@@ -86,7 +86,7 @@ ENV HOME /home/ghc
 WORKDIR /home/ghc
 USER ghc
 
-ENV PATH /opt/ghc/8.2.2/bin:/opt/cabal/2.2/bin:/php/arcanist/bin:$PATH
+ENV PATH /opt/ghc/8.4.4/bin:/opt/cabal/2.4/bin:/php/arcanist/bin:$PATH
 
 # Build dependencies for nofib-analyse
 RUN cabal update && cabal install html regex-compat
