@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y \
 # from darinmorrison/haskell
 # from http://downloads.haskell.org/debian/
 RUN  apt-key adv --keyserver hkp://keyserver.ubuntu.com:80  --recv-keys BA3CBA3FFE22B574 \
-  && echo 'deb     http://downloads.haskell.org/debian stretch main' >> /etc/apt/sources.list.d/haskell.list
+  && echo 'deb     http://downloads.haskell.org/debian testing main' >> /etc/apt/sources.list.d/haskell.list
 
 RUN apt-get update && apt-get install -y \
 
