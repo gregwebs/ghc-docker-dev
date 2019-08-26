@@ -55,6 +55,7 @@ RUN apt-get update && apt-get install -y \
   xsltproc docbook-xsl \
   python-sphinx \
   texinfo \
+  hscolour \
 
   # Needed for testing current HEAD
   python3 \
