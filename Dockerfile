@@ -49,7 +49,7 @@ RUN apt-get update && apt-get install -y \
   happy \
 
   # development conveniences
-  sudo xutils-dev \
+  sudo xutils-dev bash-completion \
 
   # For document generation
   xsltproc docbook-xsl \
@@ -66,6 +66,10 @@ RUN apt-get update && apt-get install -y \
   # It makes a lot more sense to run this from your host
   git php-cli php-curl libssl-dev vim-tiny \
   && apt-get clean
+
+# enable bash-completion
+# finds the bash completion section via a key comment then uncomments the following comment lines
+sed -i '/^#.*bash.*completion/{:more;N;s/\n#/\n/;t more}' /etc/bash.bashrc
 
 RUN mkdir /php && cd /php \
   && git clone https://github.com/phacility/libphutil.git \
