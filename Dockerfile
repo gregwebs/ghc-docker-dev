@@ -30,38 +30,38 @@ RUN  apt-key adv --keyserver hkp://keyserver.ubuntu.com:80  --recv-keys BA3CBA3F
   && echo 'deb     http://downloads.haskell.org/debian stretch main' >> /etc/apt/sources.list.d/haskell.list
 
 RUN apt-get update && apt-get install -y \
-
+  \
   # from darinmorrison/haskell, related to ncurses, not sure if it is needed
   libtinfo5 \
-
+  \
   # mentioned on the GHC wiki
   autoconf automake libtool make libgmp-dev ncurses-dev g++ python bzip2 ca-certificates \
   llvm \
   llvm-6.0 \
-
+  \
   xz-utils \
-
+  \
   ## install minimal set of haskell packages
   # from darinmorrison/haskell
   ghc-8.4.4 \
   alex \
   cabal-install-2.4 \
   happy \
-
+  \
   # development conveniences
   sudo xutils-dev \
-
+  \
   # For document generation
   xsltproc docbook-xsl \
   python-sphinx \
   texinfo \
-
+  \
   # Needed for testing current HEAD
   python3 \
-
+  \
   # Needed for running nofib
   time \
-
+  \
   # arc tool
   # It makes a lot more sense to run this from your host
   git php-cli php-curl libssl-dev vim-tiny \
